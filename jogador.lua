@@ -75,7 +75,7 @@ function Jogador:parado()
         self.comportamento:trocaEstado("buscaBola")
     end
 
-    if self.posicao:dist(self.posicaoInicial) > 15 then
+    if self.posicao:dist(self.posicaoInicial) >= 15 then
         self.comportamento:trocaEstado("voltaPosicaoInicial")
     end
 end
@@ -98,7 +98,7 @@ end
 
 --o jogador volta para a posicao inicial em que iniciou a partida
 function Jogador:voltaPosicaoInicial()
-    local raioAlvo = 10
+    local raioAlvo = 15
     self.alvo = self.posicaoInicial
 
     if self.alvo then
